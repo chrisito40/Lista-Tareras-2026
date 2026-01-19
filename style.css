@@ -1,64 +1,61 @@
-/* Reset Básico */
+/* resset */
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Helvetica;
 }
 
-/* Propiedades Personalizados */
-
+/* Propiedades Personalizadas */
 :root {
-  /* Fuentes */
- --font-primary: 'Rubik' , sans-serif;
-
-  /* Colores de Contenedores Principales   */
-  --bg-body: #166061;
-  --bg-container: #402382;
-  --bg--container-counter: #18191c;
-  --bg-task: #dbd1f4;
-  --bg-task-complete: #704fbc;
+  
+  /* Colores de Contenedores Principales */
+  --bg-body: #7c1175;
+  --bg-container: #641143;
+  --bg-container-counter: #190836;
+  --bg-task: #a189ca;
+  --bg-task-complete: #7c54c2;
+  
+  /* Espacios */
+  --space-l: 1rem;
+  --space-m: .8rem;
+  --space-s: .5rem;
 
   /* Colores de Textos */
- --text-primary: #f5f5f5;
- --text-secondary:  #ff9d00;
- --text-counter: #a8c0e2;
+  --text-primary: #ffffff;
+  --text-secondary: #dcab0b;
+  --text-counter: turquoise;
 
- /* Colores de botones */
- --btn-add-color: #5fbf2f;
- --btn-hide-color: #e07a3f;
- --btn-remove-color: #d43a3a;
- --btn-add-color-hover: #2d6113;
- --btn-hide-color-hover: #7e421e;
- --btn-remove-color-hover: #761c1c;
- --btn-text-color: var(--bg-body);
- --btn-text-color-hover: var(--text-primary);
+  /* Color Botones */
+  --btn-add-color: #f6b64f;
+  --btn-add-color-hover: #815f27;
+  --btn-hide-color: #f6ff00;
+  --btn-hide-color-hover: #797d0a;
+  --btn-remove-color: #00ff88;
+  --btn-remove-color-hover: #1c8e59e5;
 
-  /* Espacios */
-   --space-l: 1rem;
-   --space-n: .8rem;
-   --space-s: .5rem;
+  --btn-text-color: var(--bg-body);
+  --btn-text-color-hover: var(--text-primary);
+  
+  /* Bordes */
+  --border-container: #b41fc2;
+  --border-radius: 8px;
+  --border-size: 2px:
 
-
-   /* Bordes */
-   --border-radius: 4px;
-   --border-size: 1px;
-   --border-container: #9bac16;
-   
-   /* Icono */
-   --icon-color: #2b1e4a;
-   --icon-color-hover: #0fab50;
-  }
-
-
-
+  /* Iconos */
+  --icon-color: ;
+  --icon-color: #ffffff;
+  --icon-color-hover: black;
+}
 
 body {
   display: flex;
   justify-content: center;
   align-items: stretch;
   min-height: 100vh;
-  font-family: var(--font-primary);
+
+  font-family: 'Rubik'  'Helvetica';
   padding: var(--space-l);
   background-color: var(--bg-body);
 }
@@ -67,21 +64,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
-  
-
 
   width: 100%;
   max-width: 640px;
   height: fit-content;
 
- padding: var(--space-n);
+  padding: var(--space-m);
 
- border-width: var(--border-size);
- border-style: solid;
- border-color: var(--border-container);
+  border-width: var(--border-size);
+  border-style: solid;
+  border-color: var(--border-container);
 
- padding: var(--border-radius);
- background-color: var(--bg-container);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-container);
 }
 
 .titulo {
@@ -96,100 +91,109 @@ body {
 
 .tarea-entrada {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: var(--space-l);
   border-radius: var(--border-radius);
   border: none;
+  
 }
 
 .contenedor-botones {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-n);
+  gap: var(--space-m);
   width: 100%;
 }
 
 .boton {
-  padding: var(--space-s) var(--space-n);
+  padding: var(--space-m) var(--space-s);
   border: none;
   border-radius: var(--border-radius);
   font-size: .9rem;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
   color: var(--btn-text-color);
 }
 
 .boton:hover {
   color: var(--btn-text-color-hover);
+  transition: 0.5s ease;
 }
 
 .boton-agregar {
+  color: var(--btn-text-color);
   background-color: var(--btn-add-color);
 }
 
-
 .boton-agregar:hover {
   background-color: var(--btn-add-color-hover);
+  transition: 0.5s ease;
 }
 
 .boton-ocultar {
+  color: var(--btn-text-color);
   background-color: var(--btn-hide-color);
 }
 
 .boton-ocultar:hover {
   background-color: var(--btn-hide-color-hover);
+  transition: 0.5s ease;
 }
 
 .boton-eliminar {
+  color: var(--btn-text-color);
   background-color: var(--btn-remove-color);
 }
 
 .boton-eliminar:hover {
   background-color: var(--btn-remove-color-hover);
+  transition: 0.5s ease;
 }
 
-.contenedor-conteo {
+.conteo-conteo {
   display: flex;
   justify-content: space-between;
-  gap: var(--space-n);
-  padding: var(--space-n);
-  background-color: var(--bg--container-counter);
+  gap: var(--space-m);
+  padding: var(--space-m);
+  background-color: var(--bg-container-counter);
   border: 1px solid var(--border-container);
   border-radius: var(--border-radius);
 }
 
-.contenedor-conteo p {
+.conteo-conteo p {
   color: var(--text-counter);
   font-size: .95rem;
 }
 
-.tareras-totales,
-.tareras-terminadas {
+.tareas-totales,
+.tareas-terminadas {
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 500;
 }
 
-.contenedor-tareras {
+.contenedor-tareas {
   display: flex;
- flex-direction: column;
- gap: var(--space-n);
- width: 100%;
+  flex-direction: column;
+  gap: var(--space-s);
+  width: 100%;
 }
 
 .tarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--space-n);
-  padding: var(--space-s) var(--space-n) ;
+
+  gap: var(--space-m);
+  padding: var(--space-s) var(--space-m);
+
   border-radius: var(--border-radius);
+
   background-color: var(--bg-task);
 }
 
 .tarea-texto {
   flex-grow: 1;
   flex-shrink: 1;
-
 }
 
 .tarea-iconos {
@@ -197,21 +201,22 @@ body {
   flex-shrink: 0;
 
   display: flex;
-  gap: var(--space-n);
+  gap: var(--space-m);
+
 }
 
 .tarea-iconos i {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--icon-color);
   cursor: pointer;
 }
 
 .tarea-iconos i:hover {
   color: var(--icon-color-hover);
+  transition: 0.3s ease;
 }
-
-
 
 .tarea-completada {
   background-color: var(--bg-task-complete);
 }
+
