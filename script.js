@@ -1,0 +1,56 @@
+/* Referencias al documento del DOM */
+
+const tareaEntrada = document.getElementById("tareaEntrada");
+const botonAregar = document.getElementById("botonAgregar");
+const contenedorTareas = document.getElementById("contenedorTareas");
+
+
+
+/* Función para crear el elmento tarea (Función creadora de Nodo Tarea)*/
+
+function crearElementoTarea() {
+  // Crear los elementos html de la tarea
+  const tareaContenedor = document.createElement("div");
+  const tareaTexto = document.createElement("p");
+  const iconosContenedor = document.createElement("div");
+  const iconoCompletada = document.createElement("i");
+  const iconoEliminar = document.createElement("i");
+
+  // Creamos la estructura de la tarea
+  iconosContenedor.append(iconoCompletada, iconoEliminar);
+  tareaContenedor.append(tareaTexto, iconosContenedor);
+
+  // Agregamos las clases a los elmentos de la tarea
+  tareaContenedor.classList.add("tarea");
+  tareaTexto.classList.add("tarea-texto");
+  // Sigale con los otros
+  iconosContenedor.classList.add("tarea-iconos");
+  iconoCompletada.classList.add("bi" , "bi-check-circle");
+  iconoEliminar.classList.add("bi" , "bi-trash2");
+
+  // Agregamos el texto del usuario
+  tareaTexto.innerText = tareaEntrada.value;
+
+  // Retornamos la estructura de la tarea
+  return tareaContenedor; 
+}
+
+/* Escuchador */
+botonAregar.addEventListener("click", agregarTarea);
+
+
+/* Función Agregar el Elemento Tarea */
+
+function agregarTarea(){
+ // Traemos el elemento retornado por la función crearElementoTarea
+ const elementoTarea = crearElementoTarea();
+ contenedorTareas.append(elementoTarea);
+
+ // Reiniciar el value del input
+ tareaEntrada.value = "";
+}
+
+
+
+
+
